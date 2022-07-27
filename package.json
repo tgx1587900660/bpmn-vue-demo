@@ -1,12 +1,26 @@
 {
-  "name": "08.bpmn-vue-demo",
+  "name": "bpmn-vue-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "一个学习 bpmn.js 在 vue 中基本用法的练习项目",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config build/webpack.prod.js",
+    "dev": "webpack serve --open --config build/webpack.dev.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "telectron",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.7.8",
+    "vue-router": "^3.5.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "vue-loader": "^15.10.0",
+    "vue-template-compiler": "^2.7.8",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "webpack-merge": "^5.8.0"
+  }
 }
