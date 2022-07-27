@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbpmn_vue_demo=self.webpackChunkbpmn_vue_demo||[]).push([[201],{201:function(e,n,t){t.r(n),t.d(n,{default:function(){return s}});var u=function(){return(0,this._self._c)("div",{staticClass:"demo1"},[this._v("demo1")])};u._withStripped=!0;var s=(0,t(900).Z)({name:"demo-1"},u,[],!1,null,null,null).exports}}]);

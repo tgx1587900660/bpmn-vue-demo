@@ -5,17 +5,22 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config build/webpack.prod.js",
-    "dev": "webpack serve --open --config build/webpack.dev.js"
+    "dev": "webpack serve --config build/webpack.dev.js"
   },
   "keywords": [],
   "author": "telectron",
   "license": "ISC",
   "dependencies": {
+    "bpmn-js": "^9.3.1",
     "vue": "^2.7.8",
     "vue-router": "^3.5.4"
   },
   "devDependencies": {
+    "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
     "vue-loader": "^15.10.0",
     "vue-template-compiler": "^2.7.8",
     "webpack": "^5.74.0",
