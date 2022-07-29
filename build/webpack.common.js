@@ -29,9 +29,11 @@ module.exports = {
     rules: [
       // vue 相关 loader
       { test: /\.vue$/i, loader: 'vue-loader' },
-      // css 相关 loader
+      // 样式 相关 loader
       { test: /\.css$/i, use: ['style-loader', 'css-loader'] },
-      { test: /\.s[ac]ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] }
+      { test: /\.s[ac]ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      // bpmn 相关 loader
+      { test: /\.bpmn$/i, use: ['raw-loader'] }
     ]
   }
 }

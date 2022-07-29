@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<semantic:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:semantic="http://www.omg.org/spec/BPMN/20100524/MODEL" id="_1275940932088" targetNamespace="http://www.trisotech.com/definitions/_1275940932088">
+  <semantic:message id="_1275940932310" />
+  <semantic:message id="_1275940932433" />
+  <semantic:process id="_6-1" isExecutable="false">
+    <semantic:laneSet id="ls_6-438">
+      <semantic:lane id="_6-650" name="clerk">
+        <semantic:flowNodeRef>_6-450</semantic:flowNodeRef>
+        <semantic:flowNodeRef>_6-695</semantic:flowNodeRef>
+      </semantic:lane>
+    </semantic:laneSet>
+    <semantic:startEvent id="_6-450" name="Order received">
+      <semantic:outgoing>_6-630</semantic:outgoing>
+      <semantic:messageEventDefinition messageRef="_1275940932310" />
+    </semantic:startEvent>
+    <semantic:task id="_6-695" name="Calm customer">
+      <semantic:incoming>_6-630</semantic:incoming>
+    </semantic:task>
+    <semantic:sequenceFlow id="_6-630" name="" sourceRef="_6-450" targetRef="_6-695" />
+  </semantic:process>
+  <semantic:message id="_1275940932198" />
+  <semantic:process id="_6-2" isExecutable="false">
+    <semantic:startEvent id="_6-61" name="Hungry for pizza">
+      <semantic:outgoing>_6-125</semantic:outgoing>
+    </semantic:startEvent>
+    <semantic:task id="_6-74" name="Select a pizza">
+      <semantic:incoming>_6-125</semantic:incoming>
+      <semantic:outgoing>_6-178</semantic:outgoing>
+    </semantic:task>
+    <semantic:task id="_6-127" name="Order a pizza">
+      <semantic:incoming>_6-178</semantic:incoming>
+    </semantic:task>
+    <semantic:sequenceFlow id="_6-125" name="" sourceRef="_6-61" targetRef="_6-74" />
+    <semantic:sequenceFlow id="_6-178" name="" sourceRef="_6-74" targetRef="_6-127" />
+  </semantic:process>
+  <semantic:collaboration id="C1275940932557">
+    <semantic:participant id="_6-53" name="Pizza Customer" processRef="_6-2" />
+    <semantic:participant id="_6-438" name="Pizza vendor" processRef="_6-1" />
+    <semantic:messageFlow id="_6-638" name="pizza order" sourceRef="_6-127" targetRef="_6-450" />
+  </semantic:collaboration>
+  <bpmndi:BPMNDiagram id="Trisotech.Visio-_6" name="Untitled Diagram" documentation="" resolution="96.00000267028808">
+    <bpmndi:BPMNPlane bpmnElement="C1275940932557">
+      <bpmndi:BPMNShape id="Trisotech.Visio__6-53" bpmnElement="_6-53" isHorizontal="true">
+        <dc:Bounds x="12" y="12" width="488" height="268" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6-438" bpmnElement="_6-438" isHorizontal="true">
+        <dc:Bounds x="12" y="372" width="468" height="268" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-650" bpmnElement="_6-650" isHorizontal="true">
+        <dc:Bounds x="42" y="372" width="438" height="268" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-450" bpmnElement="_6-450">
+        <dc:Bounds x="79" y="405" width="30" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-695" bpmnElement="_6-695">
+        <dc:Bounds x="286" y="386" width="83" height="68" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-61" bpmnElement="_6-61">
+        <dc:Bounds x="66" y="96" width="30" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-74" bpmnElement="_6-74">
+        <dc:Bounds x="145" y="77" width="83" height="68" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Trisotech.Visio__6__6-127" bpmnElement="_6-127">
+        <dc:Bounds x="265" y="77" width="83" height="68" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Trisotech.Visio__6__6-630" bpmnElement="_6-630">
+        <di:waypoint x="109" y="420" />
+        <di:waypoint x="286" y="420" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Trisotech.Visio__6__6-125" bpmnElement="_6-125">
+        <di:waypoint x="96" y="111" />
+        <di:waypoint x="114" y="111" />
+        <di:waypoint x="145" y="111" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Trisotech.Visio__6__6-638" bpmnElement="_6-638">
+        <di:waypoint x="306" y="145" />
+        <di:waypoint x="306" y="252" />
+        <di:waypoint x="94" y="252" />
+        <di:waypoint x="94" y="405" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Trisotech.Visio__6__6-178" bpmnElement="_6-178">
+        <di:waypoint x="228" y="111" />
+        <di:waypoint x="265" y="111" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</semantic:definitions>
