@@ -35,5 +35,11 @@ module.exports = {
       // bpmn 相关 loader
       { test: /\.bpmn$/i, use: ['raw-loader'] }
     ]
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    },
+    extensions: ['.js', '.ts', '.json']
   }
 }
