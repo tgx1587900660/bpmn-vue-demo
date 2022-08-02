@@ -4,7 +4,7 @@ import router from '../router/index.js'
 import axios from './api/index.js'
 
 // 全局样式
-import './style/index.scss'
+import './assets/css/index.scss'
 
 // bpmn-js 左边工具栏以及编辑节点的样式
 import 'bpmn-js/dist/assets/diagram-js.css'

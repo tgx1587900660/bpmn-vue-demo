@@ -108,7 +108,7 @@ export default {
           // resolve(pizzaXml)
           // resolve(customXml)
           this.loading = false
-        }, 1500)
+        }, 500)
       })
     },
     // 绘制 demo 图

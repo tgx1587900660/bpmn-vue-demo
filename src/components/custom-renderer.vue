@@ -1,11 +1,10 @@
 <template>
-  <div class="custom-palette">
-    <div class="loading" v-if="loading">Loading...</div>
+  <div class="custom-renderer">
     <div class="tool-bar">
       <p>
-        新增了一个
-        <strong>左侧工具栏图标</strong>
-        （但该图标绘制的图形任然是复用原有的圆角长方形 Create Task）
+        自定义左侧工具栏图标
+        <strong>绘制的图形改造</strong>
+        （不再复用原图形）
       </p>
     </div>
     <div class="containers">
@@ -15,20 +14,17 @@
 </template>
 
 <script>
+// import CustomModeler from './customModeler'
 import BpmnModeler from 'bpmn-js/lib/Modeler'
-import { demoXml } from '@/mock/xmlStr.js'
 import customModule from './custom'
-
+import { demoXml } from '@/mock/xmlStr.js'
 // 左边工具栏和节点相关
 import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda'
 
 export default {
-  name: 'custom-palette',
-  props: {},
+  name: 'custom-renderer',
   data() {
     return {
-      // 是否加载中
-      loading: false,
       // bpmn 实例对象
       bpmnModeler: null,
       // 要被绘制的初始 xml 文件
@@ -52,17 +48,15 @@ export default {
     },
     // 初始化 bpmn 实例对象
     initInstance() {
-      console.dir(BpmnModeler)
       this.bpmnModeler = new BpmnModeler({
         container: '#bpmn',
         additionalModules: [
-          // 左边工具栏和节点 模块
+          // 左边工具栏以及节点
           propertiesProviderModule,
-          // 自定义 模块
+          // 自定义的节点
           customModule
         ]
       })
-      console.log(this.bpmnModeler)
     },
     // 绘制 demo 图
     createNewView(xml) {
@@ -72,22 +66,13 @@ export default {
         // 让图能自适应屏幕
         this.bpmnModeler.get('canvas').zoom('fit-viewport')
       })
-    },
-    // 销毁图形
-    detachView() {
-      this.bpmnModeler && this.bpmnModeler.detach()
-    },
-    // 销毁配置栏
-    detachToolBox() {
-      const propertiesPanel = this.bpmnModeler.get('propertiesPanel')
-      propertiesPanel.detach()
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.custom-palette {
+.custom-renderer {
   padding: 10px 20px;
   height: calc(100% - 100px);
   display: flex;
@@ -109,19 +94,5 @@ export default {
 }
 :deep(.bjs-container .bjs-powered-by) {
   display: none;
-}
-
-.loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  opacity: 0.8;
-  background-color: #fff;
 }
 </style>

@@ -1,9 +1,15 @@
+<!-- 
+  自定义 左侧工具栏（重写一个类 CustomModeler，通过继承原始 BpmnModeler 类来实现）
+ -->
 <template>
   <div class="custom-palette">
     <div class="loading" v-if="loading">Loading...</div>
     <div class="tool-bar">
-      <button ref="saveAsBpmnRef">保存为bpmn</button>
-      <button ref="saveAsSvgRef">保存为svg</button>
+      <p>
+        完全自定义的
+        <strong>左侧工具栏项目</strong>
+        （但该图标绘制的图形任然是复用原有的圆角长方形 Create Task）
+      </p>
     </div>
     <div class="containers">
       <div class="view-box" id="bpmn"></div>
@@ -14,10 +20,6 @@
 <script>
 import CustomModeler from './customModeler'
 import { demoXml } from '@/mock/xmlStr.js'
-// import customModule from './custom'
-
-// 左边工具栏和节点相关
-import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda'
 
 export default {
   name: 'custom-palette',
@@ -50,13 +52,7 @@ export default {
     // 初始化 bpmn 实例对象
     initInstance() {
       this.bpmnModeler = new CustomModeler({
-        container: '#bpmn',
-        additionalModules: [
-          // 左边工具栏和节点 模块
-          // propertiesProviderModule,
-          // 自定义 模块
-          // customModule
-        ]
+        container: '#bpmn'
       })
     },
     // 绘制 demo 图
