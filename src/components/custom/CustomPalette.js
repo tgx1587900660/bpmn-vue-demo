@@ -1,3 +1,4 @@
+// 自定义一个左侧工具栏 图形
 export default class CustomPalette {
   bpmnFactory
   create
@@ -36,11 +37,11 @@ export default class CustomPalette {
     }
 
     return {
-      'create.my-firtst-task': {
+      'create.my-custom-task': {
         group: 'model', // 分组名, 比如tools、event、gateway、activity等等, 用于分类
         // className: 'bpmn-icon-task red', // 样式类名, 可以通过它给元素修改样式
-        className: 'icon-custom my-firtst-task', // 样式类名, 可以通过它给元素修改样式
-        title: translate('创建一个类型为my-firtst-task的任务节点'), // 鼠标移动到元素上面给出的提示信息
+        className: 'icon-custom my-custom-task', // 样式类名, 可以通过它给元素修改样式
+        title: translate('创建一个类型为my-custom-task的任务节点'), // 鼠标移动到元素上面给出的提示信息
         // 操作
         action: {
           dragstart: createTask(), // 开始拖拽时调用的事件

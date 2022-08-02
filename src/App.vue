@@ -5,6 +5,7 @@
       <router-link to="/demo1" :title="demo1Title">demo1</router-link>
       <router-link to="/demo2">demo2</router-link>
       <router-link to="/custom-palette">custom-palette</router-link>
+      <router-link to="/custom-modeler">custom-modeler</router-link>
     </div>
     <router-view></router-view>
   </div>

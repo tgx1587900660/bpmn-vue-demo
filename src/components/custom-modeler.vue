@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import BpmnModeler from 'bpmn-js/lib/Modeler'
+import CustomModeler from './customModeler'
 import { demoXml } from '@/mock/xmlStr.js'
-import customModule from './custom'
+// import customModule from './custom'
 
 // 左边工具栏和节点相关
 import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda'
@@ -49,17 +49,15 @@ export default {
     },
     // 初始化 bpmn 实例对象
     initInstance() {
-      console.dir(BpmnModeler);
-      this.bpmnModeler = new BpmnModeler({
+      this.bpmnModeler = new CustomModeler({
         container: '#bpmn',
         additionalModules: [
           // 左边工具栏和节点 模块
-          propertiesProviderModule,
+          // propertiesProviderModule,
           // 自定义 模块
-          customModule
+          // customModule
         ]
       })
-      console.log(this.bpmnModeler);
     },
     // 绘制 demo 图
     createNewView(xml) {
@@ -69,15 +67,6 @@ export default {
         // 让图能自适应屏幕
         this.bpmnModeler.get('canvas').zoom('fit-viewport')
       })
-    },
-    // 销毁图形
-    detachView() {
-      this.bpmnModeler && this.bpmnModeler.detach()
-    },
-    // 销毁配置栏
-    detachToolBox() {
-      const propertiesPanel = this.bpmnModeler.get('propertiesPanel')
-      propertiesPanel.detach()
     }
   }
 }
