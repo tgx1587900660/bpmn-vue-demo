@@ -34,6 +34,7 @@ export default class CustomRenderer extends BaseRenderer {
 
     // 判断是否有name属性来决定是否要渲染出label
     if (!hasLabelElements.includes(type) && element.businessObject.name) {
+      console.log(111);
       const text = svgCreate('text', {
         x: attr.x,
         y: attr.y + attr.height + 20, // y取的是父元素的y+height+20

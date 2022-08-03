@@ -3,6 +3,7 @@ const demo2 = () => import('../view/demo2.vue')
 const customPalette = () => import('@/components/custom-palette.vue')
 const customModeler = () => import('@/components/custom-modeler.vue')
 const customRenderer = () => import('@/components/custom-renderer.vue')
+const customContextPad = () => import('@/components/custom-context-pad.vue')
 
 const routes = [
   { path: '/', redirect: '/demo1' },
@@ -10,7 +11,8 @@ const routes = [
   { path: '/demo2', component: demo2 },
   { path: '/custom-palette', component: customPalette },
   { path: '/custom-modeler', component: customModeler },
-  { path: '/custom-renderer', component: customRenderer }
+  { path: '/custom-renderer', component: customRenderer },
+  { path: '/custom-context-pad', component: customContextPad }
 ]
 
 export default routes

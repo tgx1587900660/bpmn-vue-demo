@@ -7,6 +7,7 @@
       <router-link to="/custom-palette">custom-palette</router-link>
       <router-link to="/custom-modeler">custom-modeler</router-link>
       <router-link to="/custom-renderer">custom-renderer</router-link>
+      <router-link to="/custom-context-pad">custom-context-pad</router-link>
     </div>
     <router-view></router-view>
   </div>
