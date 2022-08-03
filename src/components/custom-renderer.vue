@@ -14,12 +14,12 @@
 </template>
 
 <script>
-// import CustomModeler from './customModeler'
-import BpmnModeler from 'bpmn-js/lib/Modeler'
-import customModule from './custom'
+import CustomModeler from './customModeler'
+// import BpmnModeler from 'bpmn-js/lib/Modeler'
+// import customModule from './custom'
 import { demoXml } from '@/mock/xmlStr.js'
 // 左边工具栏和节点相关
-import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda'
+// import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda'
 
 export default {
   name: 'custom-renderer',
@@ -48,14 +48,14 @@ export default {
     },
     // 初始化 bpmn 实例对象
     initInstance() {
-      this.bpmnModeler = new BpmnModeler({
+      this.bpmnModeler = new CustomModeler({
         container: '#bpmn',
-        additionalModules: [
-          // 左边工具栏以及节点
-          propertiesProviderModule,
-          // 自定义的节点
-          customModule
-        ]
+        // additionalModules: [
+        //   // 左边工具栏以及节点
+        //   propertiesProviderModule,
+        //   // 自定义的节点
+        //   customModule
+        // ]
       })
     },
     // 绘制 demo 图

@@ -1,3 +1,6 @@
+/**
+ * 这里面是完全自定义的一个 CustomModeler 类 （通过继承原始类 Modeler 实现）
+ */
 import Modeler from 'bpmn-js/lib/Modeler'
 import CustomModule from './custom'
 

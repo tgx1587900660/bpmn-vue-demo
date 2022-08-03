@@ -17,4 +17,7 @@ const customConfig = {
 // 设置最高优先级
 const HIGH_PRIORITY = 1500
 
-export { customElements, customConfig, HIGH_PRIORITY }
+// 一开始就有label标签的元素类型
+const hasLabelElements = ['bpmn:StartEvent', 'bpmn:EndEvent']
+
+export { customElements, customConfig, HIGH_PRIORITY, hasLabelElements }
