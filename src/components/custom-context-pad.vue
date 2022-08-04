@@ -13,9 +13,10 @@
 </template>
 
 <script>
-import BpmnModeler from 'bpmn-js/lib/Modeler'
+// import BpmnModeler from 'bpmn-js/lib/Modeler'
+// import customModule from './custom'
+import CustomModeler from './customModeler'
 import { demoXml } from '@/mock/xmlStr.js'
-import customModule from './custom'
 
 export default {
   name: 'custom-context-pad',
@@ -41,12 +42,12 @@ export default {
     },
     // 初始化 bpmn 实例对象
     initInstance() {
-      this.bpmnModeler = new BpmnModeler({
+      this.bpmnModeler = new CustomModeler({
         container: '#bpmn',
-        additionalModules: [
-          // 自定义 模块
-          customModule
-        ]
+        // additionalModules: [
+        //   // 自定义 模块
+        //   customModule
+        // ]
       })
     },
     // 绘制 demo 图
